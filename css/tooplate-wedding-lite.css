@@ -410,15 +410,58 @@ strong {
   background-image: url('../images/couple-hugging-laughing-near-wall.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   border-radius: var(--border-radius-small);
   position: relative;
   overflow: hidden;
-  padding: 50px;
-  height: calc(90vh - 98px);
+  padding: 30px 20px;
+  height: calc(100vh - 70px); /* Изменено для мобильных */
+  min-height: 500px; /* Минимальная высота */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-container h2 {
   color: var(--custom-btn-bg-color);
+  font-size: 1.5rem; /* Уменьшенный размер шрифта */
+  margin-bottom: 15px;
+}
+
+/* Медиазапросы для адаптации */
+@media (max-width: 767px) {
+  .hero-container {
+    padding: 25px 15px;
+    height: calc(100vh - 60px);
+    min-height: 400px;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  
+  .hero-container h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-container {
+    padding: 20px 12px;
+    border-radius: 0;
+    margin-left: -12px;
+    margin-right: -12px;
+    width: calc(100% + 24px);
+  }
+  
+  .hero-title {
+    font-size: 2rem !important; /* Адаптация главного заголовка */
+  }
+}
+
+/* Оптимизация фонового изображения */
+@media (max-width: 991px) {
+  .hero-container {
+    background-position: 65% center;
+  }
 }
 
 
@@ -944,9 +987,19 @@ strong {
   }
   
   /* Оптимизация карты */
-  .gis-map {
-    height: 250px;
-  }
+  /* Адаптация карты */
+.yandex-map {
+    min-height: 250px;
+}
+
+@media (max-width: 767px) {
+    .yandex-map {
+        min-height: 200px;
+    }
+    .section-block {
+        padding: 15px;
+    }
+}
   
   /* Улучшение формы RSVP */
   .rsvp-form-wrap {
